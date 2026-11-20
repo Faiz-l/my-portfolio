@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --background: #f8faf7;
+  --foreground: #26372f;
+  --muted: #51665b;
+  --border: #dfe8df;
+  --accent: #dce9df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: #dce9df;
+  color: #26372f;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #456150;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container-main {
+  max-width: 1050px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 96px;
+  padding-bottom: 40px;
+  scroll-margin-top: 84px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #26372f;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover {
+  border-color: #9ab5a1;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(38, 55, 47, 0.06);
+}
+
+.hero-section {
+  min-height: max(600px, calc(100svh - 80px));
+  padding-top: 48px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-description {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 68px;
+  }
+
+  .hero-section {
+    min-height: 540px;
+  }
+}
